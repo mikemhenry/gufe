@@ -124,7 +124,6 @@ jobs:
         working-directory: /tmp
         run: |
           # Run tests
-          ls -l $GITHUB_WORKSPACE/src/gufe/tests/
           python -m pytest --import-mode=importlib -v -n 2 --color=yes --durations=10 $GITHUB_WORKSPACE/src/gufe/tests/
 
   publish:
