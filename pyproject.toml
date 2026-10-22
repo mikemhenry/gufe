@@ -25,10 +25,31 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Chemistry",
 ]
 dynamic = [ "version" ]
+dependencies = [
+  "msgpack",                   # see https://pypi.org/project/msgpack-python/
+  "networkx",
+  "numpy",
+  "openff-interchange>=0.5.4",
+  "openff-toolkit>=0.15.1",
+  "openff-units>=0.4",
+  "openmm",
+  "pint",
+  "pooch>=1.9",                # min needed for https://github.com/fatiando/pooch/issues/502
+  "pydantic>=2.13",
+  "rdkit>=2024.9.1",           # github.com/OpenFreeEnergy/gufe/issues/664
+  "typing-extensions",
+  "zstandard",
+]
 urls = { Homepage = "https://github.com/OpenFreeEnergy/gufe" }
 [[project.authors]]
 name = "The OpenFE developers"
 email = "openfe@omsf.io"
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "pytest-cov",
+  "pytest-xdist",
+]
 
 [tool.setuptools]
 include-package-data = true
